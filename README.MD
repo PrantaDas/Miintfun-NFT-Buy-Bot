@@ -87,4 +87,4 @@ python src/app.py
 ```
 
 ### License
-[MIT](https://github.com/PrantaDas/mintfun-NFTBot.git)
+[MIT](https://github.com/PrantaDas/mintfun-NFTBot/blob/main/LICENSE)
