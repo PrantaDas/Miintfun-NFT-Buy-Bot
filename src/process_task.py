@@ -13,7 +13,7 @@ async def process_task(api: Api, repo: Repository, wallet: Wallet):
             is_exist = repo.findOne({'collAddress':collection['contract'].split(':')[1],'name':collection['name']})
 
             if is_exist:
-                print(f"=> {collection['contract']} is already minted.Skipping...")
+                print(f"=> {collection['contract']} is already minted. Skipping...")
                 continue
 
             transaction_info = await api.mint_qty(collection['contract'])
@@ -43,7 +43,10 @@ async def process_task(api: Api, repo: Repository, wallet: Wallet):
                 
                 if trxn_info and trxn_info is not None:
                     minted = repo.insertOne({'name':collection['name'],'collAddress':collection['contract'].split(':')[1],'trxId':trxn_info})
-                    if minted and minted is not None:
+                    if not minted or minted is None:
                         print(f"=> New Collection minted Transaction Hash: {trxn_info}")
+                    else:
+                        print(f"=> Couldn't store minted Transaction Hash: {trxn_info}")
+
     except Exception as e:
         print(e)
