@@ -30,7 +30,7 @@ When the requirements of the project was given to us we were instructed to autom
 1. Clonse the repository
 
 ```shell
-git clone git@github.com:CoreDevsLtd/mintfun-bot.git
+git clone https://github.com/PrantaDas/mintfun-NFTBot.git
 ```
 2. Change the directory
 
@@ -87,4 +87,4 @@ python src/app.py
 ```
 
 ### License
-[MIT](https://github.com/Prantadas)
+[MIT](https://github.com/PrantaDas/mintfun-NFTBot.git)
